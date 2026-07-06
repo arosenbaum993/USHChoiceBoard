@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USH Choice Board Studio</title>
+
+  <!-- React + Babel -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.visible{visibility:visible}.collapse{visibility:collapse}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.bottom-0{bottom:0}.left-1\/3{left:33.333333%}.left-2\.5{left:.625rem}.right-0{right:0}.top-0{top:0}.top-2\.5{top:.625rem}.z-10{z-index:10}.z-40{z-index:40}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.line-clamp-1{-webkit-line-clamp:1}.line-clamp-1,.line-clamp-4{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical}.line-clamp-4{-webkit-line-clamp:4}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-3{height:.75rem}.h-3\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-96{height:24rem}.h-\[240px\]{height:240px}.max-h-\[500px\]{max-height:500px}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-3{width:.75rem}.w-3\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-96{width:24rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}@keyframes spin{to{transform:rotate(1turn)}}.animate-spin-slow{animation:spin 8s linear infinite}.resize-none{resize:none}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-y-1\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.375rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.375rem*var(--tw-space-y-reverse))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.space-y-6>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem*var(--tw-space-y-reverse))}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-emerald-500\/30{border-color:rgba(16,185,129,.3)}.border-indigo-500{--tw-border-opacity:1;border-color:rgb(99 102 241/var(--tw-border-opacity,1))}.border-indigo-500\/30{border-color:rgba(99,102,241,.3)}.border-indigo-500\/50{border-color:rgba(99,102,241,.5)}.border-indigo-900\/40{border-color:rgba(49,46,129,.4)}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240/var(--tw-border-opacity,1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225/var(--tw-border-opacity,1))}.border-slate-400{--tw-border-opacity:1;border-color:rgb(148 163 184/var(--tw-border-opacity,1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85/var(--tw-border-opacity,1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59/var(--tw-border-opacity,1))}.border-slate-800\/80{border-color:rgba(30,41,59,.8)}.border-slate-850{--tw-border-opacity:1;border-color:rgb(23 32 51/var(--tw-border-opacity,1))}.border-slate-900{--tw-border-opacity:1;border-color:rgb(15 23 42/var(--tw-border-opacity,1))}.border-teal-500\/20{border-color:rgba(20,184,166,.2)}.border-teal-500\/30{border-color:rgba(20,184,166,.3)}.border-transparent{border-color:transparent}.bg-emerald-950\/30{background-color:rgba(2,44,34,.3)}.bg-indigo-500\/10{background-color:rgba(99,102,241,.1)}.bg-indigo-500\/20{background-color:rgba(99,102,241,.2)}.bg-indigo-500\/5{background-color:rgba(99,102,241,.05)}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229/var(--tw-bg-opacity,1))}.bg-indigo-950\/20{background-color:rgba(30,27,75,.2)}.bg-indigo-950\/40{background-color:rgba(30,27,75,.4)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59/var(--tw-bg-opacity,1))}.bg-slate-800\/80{background-color:rgba(30,41,59,.8)}.bg-slate-850{--tw-bg-opacity:1;background-color:rgb(23 32 51/var(--tw-bg-opacity,1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42/var(--tw-bg-opacity,1))}.bg-slate-900\/60{background-color:rgba(15,23,42,.6)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23/var(--tw-bg-opacity,1))}.bg-slate-950\/30{background-color:rgba(2,6,23,.3)}.bg-slate-950\/50{background-color:rgba(2,6,23,.5)}.bg-teal-500{--tw-bg-opacity:1;background-color:rgb(20 184 166/var(--tw-bg-opacity,1))}.bg-teal-500\/10{background-color:rgba(20,184,166,.1)}.bg-teal-500\/5{background-color:rgba(20,184,166,.05)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-opacity-95{--tw-bg-opacity:0.95}.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.bg-gradient-to-tr{background-image:linear-gradient(to top right,var(--tw-gradient-stops))}.from-slate-950{--tw-gradient-from:#020617 var(--tw-gradient-from-position);--tw-gradient-to:rgba(2,6,23,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-teal-400{--tw-gradient-from:#2dd4bf var(--tw-gradient-from-position);--tw-gradient-to:rgba(45,212,191,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-teal-500{--tw-gradient-from:#14b8a6 var(--tw-gradient-from-position);--tw-gradient-to:rgba(20,184,166,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-indigo-200{--tw-gradient-to:rgba(199,210,254,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#c7d2fe var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-slate-900{--tw-gradient-to:rgba(15,23,42,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#0f172a var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-indigo-600{--tw-gradient-to:#4f46e5 var(--tw-gradient-to-position)}.to-slate-900{--tw-gradient-to:#0f172a var(--tw-gradient-to-position)}.to-slate-950{--tw-gradient-to:#020617 var(--tw-gradient-to-position)}.to-teal-300{--tw-gradient-to:#5eead4 var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.p-1\.5{padding:.375rem}.p-12{padding:3rem}.p-2\.5{padding:.625rem}.p-3{padding:.75rem}.p-3\.5{padding:.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-1{padding-bottom:.25rem}.pb-4{padding-bottom:1rem}.pl-5{padding-left:1.25rem}.pl-9{padding-left:2.25rem}.pr-2{padding-right:.5rem}.pr-4{padding-right:1rem}.pt-2{padding-top:.5rem}.pt-3{padding-top:.75rem}.pt-4{padding-top:1rem}.pt-5{padding-top:1.25rem}.text-left{text-align:left}.text-center{text-align:center}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.font-sans{font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-.025em}.tracking-wider{letter-spacing:.05em}.tracking-widest{letter-spacing:.1em}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36/var(--tw-text-opacity,1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183/var(--tw-text-opacity,1))}.text-indigo-300{--tw-text-opacity:1;color:rgb(165 180 252/var(--tw-text-opacity,1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248/var(--tw-text-opacity,1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252/var(--tw-text-opacity,1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249/var(--tw-text-opacity,1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240/var(--tw-text-opacity,1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-950{--tw-text-opacity:1;color:rgb(2 6 23/var(--tw-text-opacity,1))}.text-teal-300{--tw-text-opacity:1;color:rgb(94 234 212/var(--tw-text-opacity,1))}.text-teal-400{--tw-text-opacity:1;color:rgb(45 212 191/var(--tw-text-opacity,1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-2xl,.shadow-lg{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-indigo-600\/10{--tw-shadow-color:rgba(79,70,229,.1);--tw-shadow:var(--tw-shadow-colored)}.shadow-indigo-600\/20{--tw-shadow-color:rgba(79,70,229,.2);--tw-shadow:var(--tw-shadow-colored)}.shadow-teal-500\/10{--tw-shadow-color:rgba(20,184,166,.1);--tw-shadow:var(--tw-shadow-colored)}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.ring-teal-500{--tw-ring-opacity:1;--tw-ring-color:rgb(20 184 166/var(--tw-ring-opacity,1))}.blur-3xl{--tw-blur:blur(64px)}.blur-3xl,.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}body,html{margin:0;padding:0}.custom-scrollbar::-webkit-scrollbar{width:6px}.custom-scrollbar::-webkit-scrollbar-track{background:transparent}.custom-scrollbar::-webkit-scrollbar-thumb{background:#334155;border-radius:9999px}.custom-scrollbar::-webkit-scrollbar-thumb:hover{background:#475569}.custom-scrollbar{scrollbar-width:thin;scrollbar-color:#334155 transparent}@media print{body{background:#fff!important}@page{margin:.5in}}.selection\:bg-teal-500 ::-moz-selection{--tw-bg-opacity:1;background-color:rgb(20 184 166/var(--tw-bg-opacity,1))}.selection\:bg-teal-500 ::selection{--tw-bg-opacity:1;background-color:rgb(20 184 166/var(--tw-bg-opacity,1))}.selection\:text-slate-900 ::-moz-selection{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.selection\:text-slate-900 ::selection{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.selection\:bg-teal-500::-moz-selection{--tw-bg-opacity:1;background-color:rgb(20 184 166/var(--tw-bg-opacity,1))}.selection\:bg-teal-500::selection{--tw-bg-opacity:1;background-color:rgb(20 184 166/var(--tw-bg-opacity,1))}.selection\:text-slate-900::-moz-selection{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.selection\:text-slate-900::selection{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.hover\:border-indigo-400:hover{--tw-border-opacity:1;border-color:rgb(129 140 248/var(--tw-border-opacity,1))}.hover\:border-slate-700:hover{--tw-border-opacity:1;border-color:rgb(51 65 85/var(--tw-border-opacity,1))}.hover\:bg-indigo-500:hover{--tw-bg-opacity:1;background-color:rgb(99 102 241/var(--tw-bg-opacity,1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85/var(--tw-bg-opacity,1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59/var(--tw-bg-opacity,1))}.hover\:bg-slate-800\/50:hover{background-color:rgba(30,41,59,.5)}.hover\:bg-slate-900:hover{--tw-bg-opacity:1;background-color:rgb(15 23 42/var(--tw-bg-opacity,1))}.hover\:bg-teal-400:hover{--tw-bg-opacity:1;background-color:rgb(45 212 191/var(--tw-bg-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.focus\:border-indigo-500:focus{--tw-border-opacity:1;border-color:rgb(99 102 241/var(--tw-border-opacity,1))}.focus\:border-teal-400:focus{--tw-border-opacity:1;border-color:rgb(45 212 191/var(--tw-border-opacity,1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.focus\:ring-indigo-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(99 102 241/var(--tw-ring-opacity,1))}.focus\:ring-teal-400:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(45 212 191/var(--tw-ring-opacity,1))}.disabled\:bg-slate-800:disabled{--tw-bg-opacity:1;background-color:rgb(30 41 59/var(--tw-bg-opacity,1))}.disabled\:text-slate-500:disabled{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:text-teal-300{--tw-text-opacity:1;color:rgb(94 234 212/var(--tw-text-opacity,1))}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width:640px){.sm\:w-auto{width:auto}.sm\:flex-row{flex-direction:row}.sm\:p-8{padding:2rem}}@media (min-width:768px){.md\:w-64{width:16rem}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}}@media (min-width:1024px){.lg\:col-span-4{grid-column:span 4/span 4}.lg\:col-span-8{grid-column:span 8/span 8}.lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}}@media print{.print\:block{display:block}.print\:hidden{display:none}}
+</style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" data-presets="react">
+    const { useState } = React;
+
+    /* ---------------------------------------------------------------
+       Inline lucide icons (exact SVG data from lucide-static v1.23.0)
+    --------------------------------------------------------------- */
+    const ICONS = {
+      "compass": '<circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/>',
+      "clipboard-check": '<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>',
+      "printer": '<path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/>',
+      "sparkles": '<path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/>',
+      "layers": '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>',
+      "chevron-right": '<path d="m9 18 6-6-6-6"/>',
+      "flame": '<path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/>',
+      "search": '<path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/>',
+      "help-circle": '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
+      "copy": '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+      "share-2": '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>',
+      "check-circle": '<path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/>'
+    };
+
+    function Icon({ name, className, ...rest }) {
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" strokeWidth="2"
+          strokeLinecap="round" strokeLinejoin="round"
+          className={className}
+          dangerouslySetInnerHTML={{ __html: ICONS[name] || "" }}
+          {...rest}
+        />
+      );
+    }
+
+    // Named wrappers so the original JSX (e.g. <Compass className="..." />) works unchanged
+    const Compass        = (p) => <Icon name="compass" {...p} />;
+    const ClipboardCheck = (p) => <Icon name="clipboard-check" {...p} />;
+    const Printer        = (p) => <Icon name="printer" {...p} />;
+    const Sparkles       = (p) => <Icon name="sparkles" {...p} />;
+    const Layers         = (p) => <Icon name="layers" {...p} />;
+    const ChevronRight   = (p) => <Icon name="chevron-right" {...p} />;
+    const Flame          = (p) => <Icon name="flame" {...p} />;
+    const Search         = (p) => <Icon name="search" {...p} />;
+    const HelpCircle     = (p) => <Icon name="help-circle" {...p} />;
+    const Copy           = (p) => <Icon name="copy" {...p} />;
+    const Share2         = (p) => <Icon name="share-2" {...p} />;
+    const CheckCircle    = (p) => <Icon name="check-circle" {...p} />;
+
+    /* ---------------------------------------------------------------
+       Dataset: all USH Domains and their 3x3 Choice Boards
+    --------------------------------------------------------------- */
+    const USH_DOMAINS = [
+      {
+        id: "domain-1",
+        title: "1. Colonial Foundations & Governance",
+        standards: "SSUSH1 - SSUSH2",
+        description: "Investigate early English settlement, mercantilism, regional differences, and the emergence of early self-governance and colonial identity.",
+        cards: [
+          { id: "1-1", title: "The Great Colony Pitch", type: "Creative Media", scenario: "You are a 17th-century land promoter hired by a joint-stock company. To attract diverse settlers, you must highlight your chosen region's geography, economic promise, and community structure.", modality: "Video Pitch or Illustrated Brochure", deliverable: "Create a 2-minute promotional speech or a multi-panel visual guide pitching settlement in either the Southern, New England, or Mid-Atlantic colonies, explicitly detailing how local geography shapes their survival.", standard: "SSUSH1b, c, d", difficulty: "Medium" },
+          { id: "1-2", title: "The Mercantilism Audit", type: "Analytical / Data", scenario: "You are a Crown Auditor sent from London in 1690. You need to analyze the flow of raw materials and manufactured goods to ensure the Empire's balance of trade is favored.", modality: "Infographic / Trade Flowchart", deliverable: "An annotated trans-Atlantic trade map/flowchart detailing how raw materials leave the colonies, what return goods arrive, and how England maintains absolute economic control.", standard: "SSUSH1a", difficulty: "Hard" },
+          { id: "1-3", title: "Coexistence & Conflict", type: "Empathetic Writing", scenario: "You are a neutral scribe documenting the interactions between early English colonists and local American Indian tribes (e.g., Powhatan in Virginia or Wampanoag in New England).", modality: "Dual-Perspective Journal Entries", deliverable: "Write 3 pairs of parallel journal entries representing both an Indigenous leader's and an English settler's perspective on land ownership, resources, and cultural misunderstandings.", standard: "SSUSH1b, c", difficulty: "Hard" },
+          { id: "1-4", title: "The Salutary Neglect Charter", type: "Civics / Law", scenario: "Your colony has operated under the British policy of 'Salutary Neglect' for decades. You and your fellow assembly members must formalize your town's self-governance system.", modality: "Draft Town Charter & Bylaws", deliverable: "A foundational charter (similar to the Mayflower Compact or Virginia House of Burgesses) detailing how local laws are passed, who can vote, and how you will govern yourselves without London's direct interference.", standard: "SSUSH2c", difficulty: "Medium" },
+          { id: "1-5", title: "Voices of the Great Awakening", type: "Performance / Audio", scenario: "You are an investigative reporter in 1740. You are attending an outdoor sermon by a fiery New Light preacher (like Jonathan Edwards or George Whitefield).", modality: "Podcast Episode or Live Report", deliverable: "Record a 3-minute news broadcast or write an eyewitness column analyzing how this religious revival is breaking down social boundaries, uniting the colonies, and challenging traditional church authority.", standard: "SSUSH2d", difficulty: "Easy" },
+          { id: "1-6", title: "Culinary History & Foodways", type: "Hands-on Culture", scenario: "You are a modern culinary anthropologist curating an exhibit on West African contributions to Southern foodways, agriculture, and culture brought over during the Middle Passage.", modality: "Interactive Recipe Book & History", deliverable: "A curated recipe manual detailing 3 key dishes/ingredients (e.g., okra, rice, yams) that explains their agricultural roots, how they traveled, and how they permanently shaped American food culture.", standard: "SSUSH2b", difficulty: "Easy" },
+          { id: "1-7", title: "The Diversity Tapestry", type: "Design / Curation", scenario: "You are a museum curator designing an interactive mural that celebrates European cultural diversity (German, Scottish, Irish, Dutch) in the early colonies.", modality: "Visual Collage & Museum Plaque", deliverable: "A digital or hand-drawn visual representation highlighting the specific religious, agricultural, and architectural contributions of at least three distinct non-English European groups.", standard: "SSUSH2a", difficulty: "Easy" },
+          { id: "1-8", title: "The Middle Passage Memorial", type: "Public Commem.", scenario: "You are a landscape architect commissioned to design a public memorial site in Savannah or Charleston to honor the memory and resilience of the millions of Africans who survived the Middle Passage.", modality: "Architectural Blueprint & Artist Statement", deliverable: "A detailed design proposal (sketch or digital model) with a 300-word written justification explaining how the memorial's features symbolize the history, struggle, and cultural endurance of enslaved people.", standard: "SSUSH2b", difficulty: "Medium" },
+          { id: "1-9", title: "Wildcard: Your History, Your Voice", type: "Student Choice", scenario: "You have a unique proposal to show your understanding of Colonial foundations, mercantilism, or cultural integration.", modality: "Custom Project Proposal", deliverable: "Pitch a custom plan to your teacher using the 'Wildcard Proposal Portal' below to substitute this square with your own vision.", standard: "SSUSH1 - SSUSH2", difficulty: "Flexible" }
+        ]
+      },
+      {
+        id: "domain-2",
+        title: "2. Revolution & The Constitution",
+        standards: "SSUSH3 - SSUSH5",
+        description: "Analyze the ideological causes of the American Revolution, key wartime dynamics, and the intense debates that shaped the U.S. Constitution.",
+        cards: [
+          { id: "2-1", title: "The Propaganda Press", type: "Creative Media", scenario: "You are an underground Patriot printer in Boston in 1774. You want to rally colonist support against British taxation and administrative acts.", modality: "Revolutionary Broadside / Newspaper", deliverable: "Produce a single-page political broadside that uses persuasive language and imagery to criticize the Proclamation of 1763, the Stamp Act, or the Intolerable Acts, referencing the actions of the Sons/Daughters of Liberty.", standard: "SSUSH3b", difficulty: "Medium" },
+          { id: "2-2", title: "The Common Sense Edit", type: "Analytical Writing", scenario: "You are an assistant to Thomas Paine in January 1776. He asks you to help craft the introductory pamphlet that will convince ordinary colonists to choose absolute independence over reconciliation.", modality: "Modern Executive Summary & Call to Action", deliverable: "Translate Paine's key arguments from Common Sense into a highly accessible, modern 'social media thread' or concise manifesto designed for the common citizen.", standard: "SSUSH3c", difficulty: "Easy" },
+          { id: "2-3", title: "Diplomatic Cable from Paris", type: "Civics / Law", scenario: "You are Benjamin Franklin's diplomatic attaché in Paris, 1778. You have just secured the vital French Alliance following the Battle of Saratoga.", modality: "Secret Diplomatic Dispatch", deliverable: "Write an urgent, encoded report to the Continental Congress explaining how you leveraged French rivalry with Britain, what military/naval aid is coming, and how it will alter the war.", standard: "SSUSH4b", difficulty: "Hard" },
+          { id: "2-4", title: "The Military Turning Point Map", type: "Design / Curation", scenario: "You are George Washington's Chief Cartographer. You need to brief newly arrived officers like Von Steuben and Lafayette on how geography impacted key battles.", modality: "Tactical Battle Map Analysis", deliverable: "Create a visual map analysis of Trenton, Saratoga, or Yorktown, showing how rivers, high ground, or coastal blockades directly determined the military outcome.", standard: "SSUSH4d", difficulty: "Medium" },
+          { id: "2-5", title: "The Valley Forge Podcast", type: "Performance / Audio", scenario: "You are a soldier or camp follower at Valley Forge during the bitter winter of 1777-1778. You want to record the transformation of this struggling militia into a professional fighting force.", modality: "Audio Diary Series", deliverable: "A 3-minute oral history capturing the daily hardships, the influence of Baron von Steuben's training, and the boost in morale brought by Lafayette.", standard: "SSUSH4c", difficulty: "Medium" },
+          { id: "2-6", title: "Unsung Heroes of '76", type: "Public Commem.", scenario: "You are a historian writing a feature article on how the Revolutionary War was not fought solely by white men in continental uniforms.", modality: "Biographical Profile Series", deliverable: "Create three 'trading cards' or biographical profiles highlighting the specific contributions of women, American Indians, and enslaved/free Blacks to the Revolutionary effort.", standard: "SSUSH4e", difficulty: "Easy" },
+          { id: "2-7", title: "The Constitution Compromise Debate", type: "Empathetic Writing", scenario: "You are a delegate at the Constitutional Convention in 1787. The convention is at a breaking point over representation and state sovereignty.", modality: "Fictional Dialogue / Play Script", deliverable: "Write a script of a high-stakes debate between a small-state and a large-state delegate hashing out the Great Compromise and the controversial Three-Fifths Compromise.", standard: "SSUSH5c", difficulty: "Hard" },
+          { id: "2-8", title: "The Federalist Paper Debate", type: "Civics / Law", scenario: "You are an undecided citizen in New York in 1788. You are reading Alexander Hamilton's Federalist papers in one hand, and Anti-Federalist critiques in the other.", modality: "Point-Counterpoint Editorial", deliverable: "Write a newspaper debate contrasting the Federalists' arguments for a strong executive vs. the Anti-Federalists' demands for a Bill of Rights to protect individual liberties.", standard: "SSUSH5d, e", difficulty: "Hard" },
+          { id: "2-9", title: "Wildcard: Your History, Your Voice", type: "Student Choice", scenario: "Propose a custom project covering the transition from the Articles of Confederation to the Constitution.", modality: "Custom Project Proposal", deliverable: "Pitch a custom plan using our Wildcard portal to explore constitutional compromises or revolutionary warfare.", standard: "SSUSH3 - SSUSH5", difficulty: "Flexible" }
+        ]
+      },
+      {
+        id: "domain-3",
+        title: "3. Early Republic & Westward Expansion",
+        standards: "SSUSH6 - SSUSH8",
+        description: "Examine the presidencies of Washington through Monroe, the rise of Jacksonian democracy, social reform movements, and how expansion deepened sectional divisions.",
+        cards: [
+          { id: "3-1", title: "The Presidential Briefing", type: "Analytical Writing", scenario: "You are a senior advisor to one of the first five Presidents (Washington, Adams, Jefferson, Madison, or Monroe). You must prepare a 'crisis briefing' on a defining challenge of their administration.", modality: "Executive Memo to the President", deliverable: "Write an official 400-word memo advising your President on how to handle a major event (e.g., Adams on the Sedition Act/Election of 1800, or Jefferson on the legality of the Louisiana Purchase).", standard: "SSUSH6b, c", difficulty: "Hard" },
+          { id: "3-2", title: "The Monroe Doctrine Banner", type: "Creative Media", scenario: "You are a political cartoonist in 1823. President Monroe has just declared the Western Hemisphere closed to future European colonization.", modality: "Editorial Cartoon & Editorial", deliverable: "Draw or design a political cartoon depicting the U.S. asserting control over the Americas, accompanied by a short paragraph explaining the long-term impact on foreign policy.", standard: "SSUSH6e", difficulty: "Easy" },
+          { id: "3-3", title: "Clay's American System Map", type: "Design / Curation", scenario: "You are an economic planner in Henry Clay's office. You need to convince Western farmers, Northern factory owners, and Southern planters that they are all interconnected.", modality: "Economic Connectivity Map & Pitch", deliverable: "Create an annotated visual map showing how protective tariffs, the National Bank, and internal improvements (roads/canals) link the regions into a single national economy.", standard: "SSUSH7b", difficulty: "Medium" },
+          { id: "3-4", title: "Jacksonian Democracy Town Hall", type: "Performance / Audio", scenario: "The year is 1832. You are hosting a town hall meeting discussing Andrew Jackson's presidency—including the expansion of white male suffrage, the Nullification Crisis, and the Indian Removal Act.", modality: "Town Hall Roleplay Recording / Script", deliverable: "A script or a 3-minute audio recording representing three viewpoints: a working-class Jackson supporter, a wealthy South Carolina planter, and a Cherokee nation representative.", standard: "SSUSH7a", difficulty: "Hard" },
+          { id: "3-5", title: "The Reform Crusade Newspaper", type: "Creative Media", scenario: "You are an activist in upstate New York in 1848, swept up in the religious zeal of the Second Great Awakening. You are organizing a reform movement.", modality: "Social Reform Newsletter", deliverable: "Design a 2-page historical newsletter advocating for either Temperance, Public Education reform (Horace Mann), or Women's Suffrage (Seneca Falls Convention).", standard: "SSUSH7c", difficulty: "Medium" },
+          { id: "3-6", title: "The Abolitionist Press", type: "Empathetic Writing", scenario: "You are writing for an abolitionist newspaper like William Lloyd Garrison's The Liberator or Frederick Douglass's The North Star.", modality: "Abolitionist Op-Ed or Call to Action", deliverable: "Write a powerful, persuasive article arguing against the expansion of slavery, discussing the growing impact of slave rebellions (e.g., Nat Turner) and the moral necessity of absolute abolition.", standard: "SSUSH7d", difficulty: "Medium" },
+          { id: "3-7", title: "The Sectionalism Balance Scale", type: "Analytical / Data", scenario: "You are a congressional clerk in 1850. Every time a new territory seeks statehood, the delicate balance between free and slave states is threatened.", modality: "Interactive Timeline & Balance Sheet", deliverable: "Create an infographic demonstrating how the Missouri Compromise, the annexation of Texas, and the Compromise of 1850 attempted (and ultimately failed) to keep the balance of power equal.", standard: "SSUSH8a, d", difficulty: "Hard" },
+          { id: "3-8", title: "The Road to Harper's Ferry", type: "Design / Curation", scenario: "The year is 1860. You are a national reporter creating a special report on the events that have made Civil War feel completely inevitable.", modality: "Illustrated Concept Map of Escalation", deliverable: "An annotated concept map or timeline linking five key explosive events: the Kansas-Nebraska Act, Bleeding Kansas, Scott v. Sanford, John Brown's Raid, and the Election of 1860.", standard: "SSUSH8e", difficulty: "Hard" },
+          { id: "3-9", title: "Wildcard: Your History, Your Voice", type: "Student Choice", scenario: "Propose your own medium to analyze the Age of Jackson, social reform movements, or Manifest Destiny.", modality: "Custom Project Proposal", deliverable: "Pitch a custom plan using our Wildcard portal to analyze standard 6, 7, or 8 with an alternative media format.", standard: "SSUSH6 - SSUSH8", difficulty: "Flexible" }
+        ]
+      },
+      {
+        id: "domain-4",
+        title: "4. Civil War & Reconstruction",
+        standards: "SSUSH9 - SSUSH10",
+        description: "Analyze the economic disparities, key leadership, major battles, and the complex social and constitutional struggles of the Reconstruction Era.",
+        cards: [
+          { id: "4-1", title: "The War of Resources", type: "Analytical / Data", scenario: "You are a war correspondent in 1861. You want to show your readers why the North and South are economically mismatched using hard data.", modality: "Comparative Infographic", deliverable: "An infographic comparing Union and Confederate resources (population, functioning railroad mileage, industrial output, and agricultural capacity) showing how these disparities shaped long-term strategy.", standard: "SSUSH9a", difficulty: "Easy" },
+          { id: "4-2", title: "Analyzing Lincoln's Pen", type: "Analytical Writing", scenario: "You are a political analyst in 1865 evaluating Abraham Lincoln's use of executive and rhetorical power to preserve the Union.", modality: "Critical Literary & Historical Analysis", deliverable: "A written essay or structured speech analyzing how Lincoln used the suspension of habeas corpus, the Emancipation Proclamation, and the Gettysburg Address to redefine the purpose of the war.", standard: "SSUSH9b", difficulty: "Hard" },
+          { id: "4-3", title: "The Battle & Geography Log", type: "Design / Curation", scenario: "You are a military strategist documenting how terrain and waterways shaped the major engagements of the Civil War.", modality: "Tactical Geography Journal", deliverable: "An annotated visual map or slideshow showing how geography specifically influenced the outcome of Fort Sumter, Antietam, Vicksburg, Gettysburg, and the Battle of Atlanta.", standard: "SSUSH9d", difficulty: "Medium" },
+          { id: "4-4", title: "The Leaders' Debate", type: "Performance / Audio", scenario: "You are a military historian creating a hypothetical round-table discussion between Union and Confederate leaders.", modality: "Podcast or Scripted Conversation", deliverable: "A script or recording featuring Ulysses S. Grant, Robert E. Lee, Stonewall Jackson, and William T. Sherman discussing their military philosophies and turning points of the war.", standard: "SSUSH9c", difficulty: "Hard" },
+          { id: "4-5", title: "Clash of Reconstructions", type: "Civics / Law", scenario: "You are a member of Congress in 1867. You are caught in the fierce battle between President Andrew Johnson's lenient plans and the Radical Republicans' strict congressional demands.", modality: "Point-Counterpoint Legislative Briefing", deliverable: "Develop a comparative chart or formal debate script contrasting Presidential and Congressional Reconstruction, detailing the impact of Lincoln's assassination and Johnson's impeachment.", standard: "SSUSH10a", difficulty: "Hard" },
+          { id: "4-6", title: "The Freedmen's Bureau Report", type: "Empathetic Writing", scenario: "You are a field agent for the Freedmen's Bureau in Georgia, 1866. You are documenting your attempts to assist former slaves and poor whites.", modality: "First-Person Field Report", deliverable: "Write a 3-part field diary detailing your efforts to set up schools, distribute food, negotiate labor contracts, and the heavy resistance you face from local groups.", standard: "SSUSH10b, d", difficulty: "Medium" },
+          { id: "4-7", title: "The Reconstruction Amendments", type: "Creative Media", scenario: "You are an educator in 1870. You need to explain the game-changing nature of the 13th, 14th, and 15th Amendments to newly freed citizens who want to understand their civil rights.", modality: "Civic Rights Explainer Guide", deliverable: "Create a highly visual, plain-language legal guide or poster explaining the exact protections of the 13th, 14th, and 15th Amendments and their historical significance.", standard: "SSUSH10c", difficulty: "Easy" },
+          { id: "4-8", title: "The Compromise of 1877", type: "Analytical Writing", scenario: "You are a political journalist in Washington, D.C. reporting on the backroom deal that resolved the disputed Presidential Election of 1876.", modality: "Investigative Exposé Article", deliverable: "Write an exposé article explaining the disputed votes, the deal made to pull federal troops out of the South, and how this compromise marked the formal end of Reconstruction and the rise of Jim Crow.", standard: "SSUSH10e", difficulty: "Medium" },
+          { id: "4-9", title: "Wildcard: Your History, Your Voice", type: "Student Choice", scenario: "Design your own creative project demonstrating your understanding of the Civil War or the Reconstruction era.", modality: "Custom Project Proposal", deliverable: "Propose your own alternative project (e.g., historical fiction, digital game model, or interactive presentation) via the Wildcard Portal.", standard: "SSUSH9 - SSUSH10", difficulty: "Flexible" }
+        ]
+      },
+      {
+        id: "domain-5",
+        title: "5. Industrialization, Labor & Reform",
+        standards: "SSUSH11 - SSUSH13",
+        description: "Explore the rise of Big Business, transcontinental infrastructure, massive immigration, the struggle of labor unions, and Progressive reform efforts.",
+        cards: [
+          { id: "5-1", title: "The Monopoly Board Meeting", type: "Creative Media", scenario: "You are John D. Rockefeller or Andrew Carnegie. You are explaining to your board of directors how you will use horizontal or vertical integration to dominate your industry.", modality: "Corporate Presentation or Pitch Deck", deliverable: "Create a visual pitch deck detailing your strategy to build a trust or monopoly, explaining the impact of your growth on the steel or oil markets.", standard: "SSUSH11b", difficulty: "Medium" },
+          { id: "5-2", title: "Invention Blueprint Studio", type: "Design / Curation", scenario: "You are an urban planner in 1900. You are writing a master plan on how new inventions are completely reshaping American city infrastructure.", modality: "Annotated Patent & Infrastructure Poster", deliverable: "Design a visual schematic or blueprint detailing how the telegraph, telephone, and electric light bulb have fundamentally changed American business and daily life.", standard: "SSUSH11c", difficulty: "Easy" },
+          { id: "5-3", title: "Voices from Ellis & Angel Islands", type: "Empathetic Writing", scenario: "You are an immigrant arriving in America in 1905—either a southern European entering through Ellis Island or an Asian immigrant entering through Angel Island.", modality: "Dual-Perspective Letters Home", deliverable: "Write two detailed letters to family members in Europe or Asia describing your passage, the rigorous screening processes, and your hopes and fears in the new industrial American economy.", standard: "SSUSH11d", difficulty: "Hard" },
+          { id: "5-4", title: "The Union Strike Manifest", type: "Civics / Law", scenario: "You are a labor organizer working alongside Samuel Gompers in the American Federation of Labor (AFL) in 1895.", modality: "Labor Strike Pamphlet / Manifesto", deliverable: "Write a persuasive call-to-action pamphlet outlining the AFL's demands (8-hour workday, safer conditions, collective bargaining) and detailing the specific tactics workers will use to combat corporate power.", standard: "SSUSH11e", difficulty: "Medium" },
+          { id: "5-5", title: "The Transcontinental Railroad Log", type: "Performance / Audio", scenario: "You are a Chinese or Irish laborer working on the grueling construction of the Transcontinental Railroad across the Sierra Nevada mountains.", modality: "Oral History / Audio Log Series", deliverable: "Record a 3-minute oral history detailing the intense physical dangers, the reliance on immigrant labor, and how the completion of the line forever changed the American West.", standard: "SSUSH12a", difficulty: "Medium" },
+          { id: "5-6", title: "Plains Indians' Resistance Report", type: "Analytical Writing", scenario: "You are an Indigenous historian detailing how westward expansion, farming innovations (barbed wire), and the railroad led to the systematic destruction of the buffalo and Native American displacement.", modality: "Historical Briefing / Research Narrative", deliverable: "Write a comprehensive analytical brief detailing Native American resistance (e.g., Wounded Knee, Little Bighorn) and the devastating long-term consequences of that resistance.", standard: "SSUSH12b, c", difficulty: "Hard" },
+          { id: "5-7", title: "Muckraker Exposé", type: "Creative Media", scenario: "You are an investigative muckraker (like Ida Tarbell exposing Standard Oil, or Upton Sinclair investigating Chicago meatpacking plants).", modality: "Investigative Journalism Article", deliverable: "Write a 400-word explosive exposé including dramatic headlines, sensory details of working conditions or corporate greed, and a clear call for federal legislative action.", standard: "SSUSH13a", difficulty: "Hard" },
+          { id: "5-8", title: "The Jim Crow & NAACP Timeline", type: "Analytical / Data", scenario: "You are a civil rights attorney in 1909. You need to show how the supreme court decision in Plessy v. Ferguson directly legalized systemic Jim Crow segregation, prompting the founding of the NAACP.", modality: "Legal Context Map & Infographic", deliverable: "An analytical chart mapping the progression from the Plessy decision to the rapid growth of Jim Crow laws, concluding with the founding and early advocacy strategies of the NAACP.", standard: "SSUSH13c", difficulty: "Medium" },
+          { id: "5-9", title: "Wildcard: Your History, Your Voice", type: "Student Choice", scenario: "Propose a custom project focusing on the labor struggles, industrial titans, or Progressive reforms of this era.", modality: "Custom Project Proposal", deliverable: "Submit a proposal to your teacher detailing your own plan for exploring Standards 11-13.", standard: "SSUSH11 - SSUSH13", difficulty: "Flexible" }
+        ]
+      },
+      {
+        id: "domain-6",
+        title: "6. Emergence of Modern America & WWI",
+        standards: "SSUSH14 - SSUSH16",
+        description: "Examine American imperialism, expansion into Latin America, domestic and foreign policy surrounding World War I, and the massive cultural shifts of the 1920s.",
+        cards: [
+          { id: "6-1", title: "The Imperialism Debate", type: "Analytical Writing", scenario: "The year is 1899. The US has just gained control of the Philippines and Puerto Rico after the Spanish-American War. You are arguing the future of American foreign policy.", modality: "Point-Counterpoint Speeches", deliverable: "Write two speeches: one representing an expansionist supporting American imperialism, and one representing the Anti-Imperialist League warning against global conquest.", standard: "SSUSH14a", difficulty: "Hard" },
+          { id: "6-2", title: "The Panama Canal Dig Log", type: "Design / Curation", scenario: "You are an engineer working on the construction of the Panama Canal, dealing with mudslides, malaria, and the massive scale of the locks.", modality: "Engineering & Geopolitical Journal", deliverable: "An illustrated journal or schematic explaining the geopolitical maneuverings of the Roosevelt Corollary and the scientific/engineering challenges faced during construction.", standard: "SSUSH14b", difficulty: "Medium" },
+          { id: "6-3", title: "Deciphering the Zimmermann Cable", type: "Analytical / Data", scenario: "You are a cryptanalyst in Woodrow Wilson's state department in 1917, analyzing the Zimmermann Telegram and Germany's use of unrestricted submarine warfare.", modality: "Intelligence Briefing & Decoded Report", deliverable: "An official intelligence report outlining how these German actions threaten American neutrality and require immediate entry into World War I.", standard: "SSUSH15a", difficulty: "Medium" },
+          { id: "6-4", title: "The Great Migration Map", type: "Design / Curation", scenario: "You are an African American family in rural Mississippi in 1917, planning your migration to Chicago or Detroit to find wartime industrial work.", modality: "Migration Journey Map & Oral History", deliverable: "Create an annotated migration map showing the economic and social 'push and pull' factors (Jim Crow vs. Northern factory jobs) that initiated the Great Migration.", standard: "SSUSH15b", difficulty: "Medium" },
+          { id: "6-5", title: "Woodrow Wilson's Peace League", type: "Civics / Law", scenario: "You are a US Senator in 1919, debating whether the United States should ratify the Treaty of Versailles and join Woodrow Wilson's League of Nations.", modality: "Congressional Debate Speech", deliverable: "Write a Senate speech outlining the core arguments of Wilson's Fourteen Points versus the isolationist arguments of senators who fear losing American sovereignty.", standard: "SSUSH15c", difficulty: "Hard" },
+          { id: "6-6", title: "The Red Scare Warning", type: "Creative Media", scenario: "You are an investigative journalist covering the Palmer Raids and the rapid passage of strict immigrant quotas in 1920 following the Bolshevik Revolution.", modality: "Exposé Newspaper Article", deliverable: "A newspaper feature article describing how fear of rising communism and socialism (the Red Scare) is impacting civil liberties, labor strikes, and immigration policies.", standard: "SSUSH16a", difficulty: "Medium" },
+          { id: "6-7", title: "The Assembly Line Revolution", type: "Analytical / Data", scenario: "You are an industrial psychologist hired by Henry Ford in 1924 to analyze the social effects of mass production and modern advertising.", modality: "Analytical Report on Consumerism", deliverable: "Write a report detailing how the assembly line lowered automobile prices, how advertising created a nationwide consumer culture, and how this led to personal debt.", standard: "SSUSH16c", difficulty: "Easy" },
+          { id: "6-8", title: "The Harlem Renaissance Broadcast", type: "Performance / Audio", scenario: "You are a radio announcer broadcasting live from a jazz club in Harlem in 1926, showcasing the explosion of Black cultural expression.", modality: "Radio Show Podcast Recording", deliverable: "A 3-minute radio script or audio recording reviewing works of the Harlem Renaissance (e.g., Langston Hughes, Louis Armstrong, Duke Ellington) and describing the atmosphere of modern jazz.", standard: "SSUSH16e", difficulty: "Easy" },
+          { id: "6-9", title: "Wildcard: Your History, Your Voice", type: "Student Choice", scenario: "Design your own custom exploration of WWI domestic policy, 1920s culture, or the fight for suffrage.", modality: "Custom Project Proposal", deliverable: "Propose a custom project aligning with Standards 14-16 using our interactive Wildcard Submission portal.", standard: "SSUSH14 - SSUSH16", difficulty: "Flexible" }
+        ]
+      },
+      {
+        id: "domain-7",
+        title: "7. Great Depression & World War II",
+        standards: "SSUSH17 - SSUSH19",
+        description: "Analyze the systemic causes of the Great Depression, FDR's New Deal programs, the global scale of WWII, and the extensive mobilization on the home front.",
+        cards: [
+          { id: "7-1", title: "The Crash Analysis Chart", type: "Analytical / Data", scenario: "You are an economist in late 1929 analyzing the underlying cracks in the US economy that triggered the Stock Market Crash.", modality: "Economic Breakdown & Diagram", deliverable: "Create an infographic diagram detailing how overproduction, underconsumption, and rampant stock market speculation combined to bring about the Great Depression.", standard: "SSUSH17a", difficulty: "Medium" },
+          { id: "7-2", title: "Dust Bowl Diary", type: "Empathetic Writing", scenario: "You are an Oklahoma farmer in 1934 whose land has been ruined by severe drought and decades of over-farming.", modality: "First-Person Narrative / Diary Series", deliverable: "Write a 3-part diary detailing the massive dust storms, the decision to pack up everything, and your journey west as an 'Okie' migrant searching for work in California.", standard: "SSUSH17b", difficulty: "Medium" },
+          { id: "7-3", title: "The New Deal Showcase", type: "Creative Media", scenario: "You are a communications director for Franklin D. Roosevelt's administration, preparing a guide to show the public how New Deal programs will help them.", modality: "Fireside Chat Script or Info Guide", deliverable: "Write a script for an FDR-style Fireside Chat explaining the relief, recovery, and reform programs (e.g., CCC, WPA, TVA, and the Social Security Act) and how they target those in need.", standard: "SSUSH18a, b", difficulty: "Medium" },
+          { id: "7-4", title: "The First Lady's Field Brief", type: "Empathetic Writing", scenario: "You are Eleanor Roosevelt traveling across the nation in 1936 to inspect New Deal program effectiveness and advocate for marginalized Americans.", modality: "Eleanor's Field Report to FDR", deliverable: "Write an urgent advisory letter from Eleanor to Franklin detailing the plight of minorities, poor farmers, and women, recommending specific adjustments to federal relief policies.", standard: "SSUSH18d", difficulty: "Hard" },
+          { id: "7-5", title: "WWII Theater Logistics Board", type: "Design / Curation", scenario: "You are a military logistics coordinator briefing generals on the massive difficulties of supplying weapons, medical supplies, and food across two oceans.", modality: "Logistics Briefing & Supply Map", deliverable: "Create a visual supply-chain infographic showing the distinct logistical hurdles of the Pacific Theater (island hopping, massive distances) versus the European Theater (submarine threats, staging in Britain).", standard: "SSUSH19b, c", difficulty: "Hard" },
+          { id: "7-6", title: "Home Front Mobilization Guide", type: "Creative Media", scenario: "You are a member of the Office of War Information in 1943. Your task is to instruct citizens on how they must contribute to victory from home.", modality: "Wartime Home Front Manual", deliverable: "Design a classic wartime manual detailing how rationing, war bonds, scrap drives, and industrial conversion work, featuring distinct spotlights on the roles of women (Rosie the Riveter) and African Americans.", standard: "SSUSH19d", difficulty: "Easy" },
+          { id: "7-7", title: "The Decision to Drop the Bomb", type: "Civics / Law", scenario: "You are a military advisor to President Harry Truman in July 1945. You are debating whether to authorize the dropping of the newly tested atomic bomb.", modality: "Strategic Command Memo", deliverable: "Write an official advisory memorandum summarizing the development of the Manhattan Project, weighing the projected casualties of an invasion of mainland Japan versus the ethical and geopolitical impacts of dropping the atomic bomb.", standard: "SSUSH19b", difficulty: "Hard" },
+          { id: "7-8", title: "Civil Liberties in Wartime", type: "Analytical Writing", scenario: "You are a civil rights attorney in 1944. You are writing an amicus brief or essay criticizing President Roosevelt's use of executive powers, focusing on Executive Order 9066.", modality: "Legal and Ethical Critique", deliverable: "Write a detailed critique analyzing the constitutionality and human cost of Japanese-American internment, referencing the Supreme Court's ruling and the sacrifice of civil liberties in the name of national security.", standard: "SSUSH19e", difficulty: "Hard" },
+          { id: "7-9", title: "Wildcard: Your History, Your Voice", type: "Student Choice", scenario: "Create a custom project showing your understanding of the Great Depression, the Dust Bowl, or World War II military operations.", modality: "Custom Project Proposal", deliverable: "Pitch your ideas to your instructor to substitute this square with a customized digital, oral, or written project.", standard: "SSUSH17 - SSUSH19", difficulty: "Flexible" }
+        ]
+      },
+      {
+        id: "domain-8",
+        title: "8. Cold War & Civil Rights",
+        standards: "SSUSH20 - SSUSH21",
+        description: "Examine containment policy, the Korean and Vietnam wars, domestic social issues, and the massive strategies and accomplishments of the Civil Rights Movement.",
+        cards: [
+          { id: "8-1", title: "The Containment Brief", type: "Analytical Writing", scenario: "You are a diplomat under the Truman administration in 1948. You need to explain to Congress why massive economic aid is vital to stop Soviet expansion.", modality: "Foreign Policy Whitepaper", deliverable: "A policy briefing paper explaining how the Truman Doctrine and Marshall Plan will function to 'contain' communism, referencing the growing division of Europe.", standard: "SSUSH20a", difficulty: "Hard" },
+          { id: "8-2", title: "McCarthyism & The Red Scare II", type: "Performance / Audio", scenario: "You are a radio news anchor in 1953, reporting on Senator Joseph McCarthy's high-profile, televised anti-communist hearings.", modality: "Investigative Broadcast Recording / Script", deliverable: "A 3-minute broadcast transcript detailing the atmosphere of paranoia, blacklisting in Hollywood, and how McCarthyism pressured government officials and ordinary citizens.", standard: "SSUSH20b", difficulty: "Medium" },
+          { id: "8-3", title: "The Sputnik Reaction Plan", type: "Civics / Law", scenario: "The year is 1957. The Soviet Union has just successfully launched Sputnik. You are a member of Eisenhower's scientific advisory committee.", modality: "National Defense Education Memo", deliverable: "Write a policy proposal outlining how the US must respond through technological innovation, the creation of NASA, and massive new federal funding for science and math education.", standard: "SSUSH20c", difficulty: "Medium" },
+          { id: "8-4", title: "The Gulf of Tonkin Debate", type: "Analytical Writing", scenario: "The year is 1964. Congress is debating the Gulf of Tonkin Resolution, which will grant President Lyndon B. Johnson broad powers to escalate military involvement in Vietnam.", modality: "Senate Congressional Speech", deliverable: "Write a high-stakes legislative speech analyzing the reported naval incident, the fear of the 'domino theory,' and the potential constitutional dangers of handing wartime power to the President without a formal declaration of war.", standard: "SSUSH21a", difficulty: "Hard" },
+          { id: "8-5", title: "The Great Society Broadcast", type: "Creative Media", scenario: "You are a speechwriter for Lyndon B. Johnson, preparing a prime-time address outlining his domestic 'Great Society' programs following JFK's assassination.", modality: "Presidential Speech & Explainer", deliverable: "Draft a major television address detailing how new legislation (the Civil Rights Act of 1964, Voting Rights Act of 1965, and War on Poverty initiatives) will work together to build a 'Great Society.'", standard: "SSUSH21b", difficulty: "Medium" },
+          { id: "8-6", title: "The Television Age Impact", type: "Analytical / Data", scenario: "You are a sociologist in 1969 studying the massive influence of home television ownership on public opinion during defining events of the decade.", modality: "Sociological Case Study", deliverable: "Write a report demonstrating how television news altered public perception during three key events: the Kennedy/Nixon debates of 1960, the civil rights marches, and the nightly casualty reports of the Vietnam War.", standard: "SSUSH21c", difficulty: "Medium" },
+          { id: "8-7", title: "Civil Rights Strategy Board", type: "Design / Curation", scenario: "You are a lead organizer with SNCC or SCLC in 1963, planning a series of non-violent direct-action campaigns.", modality: "Strategic Action Map & Guide", deliverable: "Create a tactical organizer detailing the philosophy and execution of nonviolent resistance (such as sit-ins, boycotts, and marches), incorporating quotes and key ideas from MLK's 'Letter from Birmingham Jail.'", standard: "SSUSH21d", difficulty: "Hard" },
+          { id: "8-8", title: "1968: A Nation Divided", type: "Creative Media", scenario: "You are a photojournalist assembling a year-end retrospective magazine cover and essay on the year 1968.", modality: "Historical Photo Essay & Commentary", deliverable: "Assemble a curated list of five key moments (the Tet Offensive, assassinations of MLK and RFK, the DNC riots, and the election) with written commentary analyzing why 1968 was a turning point of national trauma and political realignment.", standard: "SSUSH21e", difficulty: "Hard" },
+          { id: "8-9", title: "Wildcard: Your History, Your Voice", type: "Student Choice", scenario: "Submit a proposal exploring the Cold War, the Civil Rights Movement, or the farmworkers' struggle led by Cesar Chavez.", modality: "Custom Project Proposal", deliverable: "Submit a custom project plan via the Wildcard submission form below to address any standard in SSUSH20 or SSUSH21.", standard: "SSUSH20 - SSUSH21", difficulty: "Flexible" }
+        ]
+      },
+      {
+        id: "domain-9",
+        title: "9. The Modern Era (Nixon to Obama)",
+        standards: "SSUSH22 - SSUSH23",
+        description: "Analyze key foreign policy shifts, constitutional crises, economic policies like Reaganomics, technological revolutions, and historic milestones of the recent past.",
+        cards: [
+          { id: "9-1", title: "The Watergate Tape Briefing", type: "Analytical Writing", scenario: "You are a legal counsel advising President Richard Nixon during the height of the Watergate scandal investigation in 1974.", modality: "Confidential Legal Memorandum", deliverable: "Write a 400-word legal memo outlining the constitutional crisis surrounding executive privilege, the threat of impeachment, and the legal implications of his eventual resignation and subsequent pardon by Gerald Ford.", standard: "SSUSH22b", difficulty: "Hard" },
+          { id: "9-2", title: "The Camp David Accord Log", type: "Civics / Law", scenario: "You are a chief foreign policy advisor to President Jimmy Carter in 1978, working to broker a historic peace treaty in the Middle East.", modality: "Diplomatic Diary & Agreement Brief", deliverable: "Write a set of diplomatic notes capturing the intense negotiations between Egypt and Israel at Camp David, outlining the terms of the accord and analyzing Carter's diplomatic strategy.", standard: "SSUSH22a", difficulty: "Medium" },
+          { id: "9-3", title: "The Iranian Hostage Crisis Dispatch", type: "Performance / Audio", scenario: "You are an American news correspondent broadcasting live from Tehran in November 1979 during the seizure of the US Embassy.", modality: "Live News Broadcast Script or Audio", deliverable: "Create a 3-minute news broadcast script or recording explaining the causes of the revolution, the hostage crisis, and how this event damaged public confidence in President Carter's leadership.", standard: "SSUSH22a", difficulty: "Medium" },
+          { id: "9-4", title: "Evaluating Reaganomics", type: "Analytical / Data", scenario: "You are an economic advisor in 1985 presenting a review of President Ronald Reagan's supply-side economic policies.", modality: "Data Analysis & Presentation", deliverable: "An analytical report comparing the goals of Reaganomics (tax cuts, deregulation, increased military spending) with its real-world results, including national debt figures and inflation rates.", standard: "SSUSH23b", difficulty: "Hard" },
+          { id: "9-5", title: "The Fall of the Soviet Union", type: "Creative Media", scenario: "You are a global news editor in December 1991. You are designing a special commemorative front-page issue documenting the sudden collapse of the Soviet Union.", modality: "Front Page News Design & Analysis", deliverable: "Design a newspaper front page featuring breaking articles on the collapse, the fall of the Berlin Wall, and an analysis of how this event marks the end of the Cold War era.", standard: "SSUSH23a", difficulty: "Medium" },
+          { id: "9-6", title: "The 21st Century Terror Brief", type: "Civics / Law", scenario: "You are a national security advisor preparing a briefing for President George W. Bush in the weeks following the September 11, 2001 attacks.", modality: "Counter-Terrorism Strategy Paper", deliverable: "Draft an official policy memo outlining the immediate and long-term security responses to 9/11, explaining the Patriot Act, domestic surveillance debates, and the launch of the global War on Terrorism.", standard: "SSUSH23a", difficulty: "Hard" },
+          { id: "9-7", title: "The Digital Revolution Timeline", type: "Design / Curation", scenario: "You are a technology historian writing an article on how the personal computer, the Internet, and social media have completely reorganized human society.", modality: "Interactive Digital Evolution Poster", deliverable: "Create a visual infographic or timeline tracing the rise of consumer computers in the 1980s, the web explosion in the 1990s, and social media in the 2000s, explaining their massive impact on communication and jobs.", standard: "SSUSH23c", difficulty: "Easy" },
+          { id: "9-8", title: "The Historic Election of 2008", type: "Analytical Writing", scenario: "You are a political campaign strategist analyzing the landmark presidential election of Barack Obama.", modality: "Campaign Strategy Retrospective", deliverable: "Write an analytical essay or design a visual presentation explaining the historic nature of Obama's victory, detailing how his campaign utilized digital technology, mobilized youth voters, and broke racial barriers.", standard: "SSUSH23d", difficulty: "Medium" },
+          { id: "9-9", title: "Wildcard: Your History, Your Voice", type: "Student Choice", scenario: "Propose a custom project covering the Clinton Impeachment, environmental policy shifts, or another defining modern event.", modality: "Custom Project Proposal", deliverable: "Pitch a custom plan using our Wildcard portal to explore any aspect of Nixon-to-Obama era developments.", standard: "SSUSH22 - SSUSH23", difficulty: "Flexible" }
+        ]
+      }
+    ];
+
+    function App() {
+      const [selectedDomainIndex, setSelectedDomainIndex] = useState(0);
+      const [selectedCard, setSelectedCard] = useState(null);
+      const [wildcards, setWildcards] = useState([]);
+      const [customProposal, setCustomProposal] = useState({
+        title: "",
+        scenario: "",
+        modality: "",
+        deliverable: "",
+        standard: ""
+      });
+      const [wildcardSuccess, setWildcardSuccess] = useState(false);
+      const [showRubric, setShowRubric] = useState(false);
+      const [searchQuery, setSearchQuery] = useState("");
+      const [aiCustomPrompt, setAiCustomPrompt] = useState("");
+      const [aiLoading, setAiLoading] = useState(false);
+      const [aiError, setAiError] = useState("");
+
+      const currentDomain = USH_DOMAINS[selectedDomainIndex];
+
+      const getFilteredCards = () => {
+        if (!searchQuery) return currentDomain.cards;
+        return currentDomain.cards.filter(card =>
+          card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          card.scenario.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          card.deliverable.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          card.standard.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      };
+
+      const handleWildcardSubmit = (e) => {
+        e.preventDefault();
+        if (!customProposal.title || !customProposal.deliverable) return;
+
+        const newWildcard = {
+          ...customProposal,
+          id: `wildcard-${Date.now()}`,
+          type: "Student Choice (Custom)",
+          difficulty: "Flexible",
+          domainId: currentDomain.id
+        };
+
+        setWildcards([...wildcards, newWildcard]);
+        setWildcardSuccess(true);
+
+        setCustomProposal({
+          title: "",
+          scenario: "",
+          modality: "",
+          deliverable: "",
+          standard: currentDomain.standards
+        });
+
+        setTimeout(() => setWildcardSuccess(false), 4000);
+      };
+
+      const getCardsWithWildcards = () => {
+        const baseCards = [...currentDomain.cards];
+        const domainWildcards = wildcards.filter(w => w.domainId === currentDomain.id);
+        if (domainWildcards.length > 0) {
+          baseCards[8] = domainWildcards[domainWildcards.length - 1];
+        }
+        return baseCards;
+      };
+
+      // Custom task generator (local template mode; no external API key configured).
+      const generateAICustomCard = async () => {
+        if (!aiCustomPrompt) return;
+        setAiLoading(true);
+        setAiError("");
+
+        const apiKey = ""; // No key configured -> local generation
+        if (!apiKey) {
+          setTimeout(() => {
+            const localCustom = {
+              id: `ai-${Date.now()}`,
+              title: `Custom Project: ${aiCustomPrompt.substring(0, 25)}...`,
+              type: "AI Assisted Idea",
+              scenario: `Based on your request: "${aiCustomPrompt}". You are taking on a professional role to address historical challenges.`,
+              modality: "Digital presentation, podcast, or visual exhibit",
+              deliverable: "Create a comprehensive demonstration of learning that addresses Georgia Standards of Excellence, highlighting primary sources.",
+              standard: currentDomain.standards,
+              difficulty: "Medium",
+              domainId: currentDomain.id
+            };
+            setWildcards(prev => [...prev, localCustom]);
+            setAiLoading(false);
+            setAiCustomPrompt("");
+            setWildcardSuccess(true);
+            setTimeout(() => setWildcardSuccess(false), 4000);
+          }, 1000);
+          return;
+        }
+      };
+
+      const handlePrint = () => {
+        window.print();
+      };
+
+      const handleCopyToClipboard = (text) => {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+        } catch (err) {
+          console.error('Copy failed', err);
+        }
+        document.body.removeChild(textArea);
+      };
+
+      return (
+        <div className="min-h-screen bg-slate-900 text-slate-100 font-sans selection:bg-teal-500 selection:text-slate-900">
+
+          {/* Top Premium Brand Header */}
+          <header className="bg-slate-950 border-b border-slate-800 sticky top-0 z-40 backdrop-blur-md bg-opacity-95 print:hidden">
+            <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="bg-gradient-to-tr from-teal-500 to-indigo-600 p-2.5 rounded-xl shadow-lg shadow-teal-500/10">
+                  <Compass className="h-6 w-6 text-white animate-spin-slow" />
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-teal-400 via-indigo-200 to-teal-300 bg-clip-text text-transparent">
+                    USH Choice Board Studio
+                  </h1>
+                  <p className="text-xs text-slate-400">Georgia Standards of Excellence (GSE) • Student-Centered Learning Suite</p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto justify-end">
+                <button
+                  onClick={() => setShowRubric(!showRubric)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    showRubric
+                      ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/20"
+                      : "bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700"
+                  }`}
+                >
+                  <ClipboardCheck className="h-4 w-4" />
+                  {showRubric ? "View Grid" : "Assessment Rubric"}
+                </button>
+                <button
+                  onClick={handlePrint}
+                  className="flex items-center gap-2 px-4 py-2 bg-teal-500 hover:bg-teal-400 text-slate-950 rounded-lg text-sm font-semibold shadow-lg shadow-teal-500/10 transition-all"
+                >
+                  <Printer className="h-4 w-4" />
+                  Print / Export PDF
+                </button>
+              </div>
+            </div>
+          </header>
+
+          {/* Main Studio Body */}
+          <main className="max-w-7xl mx-auto px-4 py-8 print:hidden">
+
+            {/* Intro Banner */}
+            <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 rounded-2xl border border-slate-800 p-6 sm:p-8 mb-8 relative overflow-hidden">
+              <div className="absolute right-0 top-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none"></div>
+              <div className="absolute left-1/3 bottom-0 w-64 h-64 bg-teal-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+              <div className="relative z-10 max-w-3xl">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-400 border border-teal-500/20 mb-3">
+                  <Sparkles className="h-3 w-3" /> Creative Assessment Studio
+                </span>
+                <h2 className="text-3xl font-extrabold text-white mb-2 tracking-tight">
+                  Empower Voice, Choice, & Depth of Knowledge
+                </h2>
+                <p className="text-slate-300 text-base leading-relaxed">
+                  We reject passive worksheets. Below are nine custom 3x3 choice boards tailored specifically to the complete Georgia US History standards. Perfect for unit finales, capstones, or creative test preparation. Select a historical era to get started.
+                </p>
+              </div>
+            </div>
+
+            {/* Studio Layout Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+              {/* Left Panel: Domain Explorer */}
+              <div className="lg:col-span-4 space-y-4">
+                <div className="bg-slate-950 rounded-xl p-4 border border-slate-800">
+                  <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 px-2 flex items-center justify-between">
+                    <span>Select Historical Era</span>
+                    <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded-full">9 Domains</span>
+                  </h3>
+
+                  <div className="space-y-1.5 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+                    {USH_DOMAINS.map((domain, index) => (
+                      <button
+                        key={domain.id}
+                        onClick={() => {
+                          setSelectedDomainIndex(index);
+                          setSelectedCard(null);
+                        }}
+                        className={`w-full text-left p-3.5 rounded-xl transition-all border flex items-start gap-3 group relative ${
+                          selectedDomainIndex === index
+                            ? "bg-indigo-950/40 border-indigo-500 text-white"
+                            : "bg-slate-900/60 border-slate-800/80 text-slate-300 hover:bg-slate-800/50 hover:border-slate-700"
+                        }`}
+                      >
+                        <div className={`mt-0.5 p-1.5 rounded-lg ${
+                          selectedDomainIndex === index ? "bg-indigo-500/20 text-indigo-300" : "bg-slate-800 text-slate-500"
+                        }`}>
+                          <Layers className="h-4 w-4" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-sm group-hover:text-white transition-colors">
+                            {domain.title}
+                          </div>
+                          <div className="text-xs text-slate-400 mt-1 flex items-center gap-2">
+                            <span className="bg-slate-800/80 px-1.5 py-0.5 rounded font-mono text-slate-300">{domain.standards}</span>
+                          </div>
+                        </div>
+                        <ChevronRight className="h-4 w-4 text-slate-500 self-center opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Custom Card Generator */}
+                <div className="bg-slate-950 rounded-xl p-4 border border-slate-800">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Flame className="h-5 w-5 text-teal-400 animate-pulse" />
+                    <h4 className="font-bold text-sm text-slate-100">Dynamic Task Generator</h4>
+                  </div>
+                  <p className="text-xs text-slate-400 mb-3">
+                    Need a specific focus? Describe an alternative role or topic, and we'll instantly structure a custom square for the current board!
+                  </p>
+                  <div className="space-y-2">
+                    <input
+                      type="text"
+                      placeholder="e.g. A podcast on the Battle of Atlanta"
+                      value={aiCustomPrompt}
+                      onChange={(e) => setAiCustomPrompt(e.target.value)}
+                      className="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs focus:ring-1 focus:ring-teal-400 focus:border-teal-400 focus:outline-none text-slate-100"
+                    />
+                    <button
+                      onClick={generateAICustomCard}
+                      disabled={aiLoading || !aiCustomPrompt}
+                      className="w-full bg-teal-500 hover:bg-teal-400 disabled:bg-slate-800 disabled:text-slate-500 text-slate-950 font-bold text-xs py-2 rounded-lg transition-all"
+                    >
+                      {aiLoading ? "Constructing Task..." : "Generate and Inject Card"}
+                    </button>
+                    {aiError && <p className="text-[11px] text-amber-400">{aiError}</p>}
+                  </div>
+                </div>
+
+                {/* Quick Stats Panel */}
+                <div className="bg-slate-950 rounded-xl p-4 border border-slate-800 space-y-3">
+                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Board Integration Keys</h4>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="bg-slate-900 p-2.5 rounded-lg border border-slate-800/80">
+                      <div className="text-slate-400 font-medium">Core Tasks</div>
+                      <div className="text-lg font-bold text-teal-400">8 / Board</div>
+                    </div>
+                    <div className="bg-slate-900 p-2.5 rounded-lg border border-slate-800/80">
+                      <div className="text-slate-400 font-medium">Wildcard Slots</div>
+                      <div className="text-lg font-bold text-indigo-400">1 / Board</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Panel: Choice Board Grid & Workspace */}
+              <div className="lg:col-span-8 space-y-6">
+
+                {/* Active Era Status Header */}
+                <div className="bg-slate-950 p-5 rounded-xl border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div>
+                    <span className="font-mono text-xs text-teal-400 font-semibold">{currentDomain.standards}</span>
+                    <h3 className="text-xl font-bold text-white mt-1">{currentDomain.title}</h3>
+                    <p className="text-xs text-slate-400 mt-1 max-w-xl">{currentDomain.description}</p>
+                  </div>
+                  <div className="relative w-full md:w-64">
+                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-slate-500" />
+                    <input
+                      type="text"
+                      placeholder="Filter tasks/standards..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full bg-slate-900 border border-slate-800 rounded-lg pl-9 pr-4 py-2 text-xs focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none text-slate-100"
+                    />
+                  </div>
+                </div>
+
+                {/* Conditional Rendering: Rubric View or Choice Board View */}
+                {showRubric ? (
+                  <div className="bg-slate-950 border border-indigo-900/40 rounded-xl p-6 space-y-6">
+                    <div className="border-b border-slate-800 pb-4">
+                      <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                        <ClipboardCheck className="text-indigo-400 h-5 w-5" />
+                        Growth-Oriented Single-Point Assessment Rubric
+                      </h3>
+                      <p className="text-xs text-slate-400 mt-1">
+                        Empowers student voice by prioritizing the mastery of standard requirements over compliance checklists.
+                      </p>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                        <div className="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                          <h4 className="font-bold text-sm text-amber-400 mb-2">Needs Polish / Re-Route</h4>
+                          <p className="text-xs text-slate-300 leading-relaxed">
+                            • Student artifact misses historical connections.<br />
+                            • Deliverable is incomplete or lacks clear real-world role alignment.<br />
+                            • Lacks supporting historical facts or direct standard reference.
+                          </p>
+                        </div>
+
+                        <div className="bg-indigo-950/20 p-4 rounded-xl border border-indigo-500/30">
+                          <h4 className="font-bold text-sm text-teal-400 mb-2">Meets Standard (The Target)</h4>
+                          <p className="text-xs text-slate-300 leading-relaxed">
+                            • <strong>Historical Accuracy:</strong> Clear, correct explanation of the target USH standard details.<br />
+                            • <strong>Role Alignment:</strong> The professional scenario constraints are fully met.<br />
+                            • <strong>Communication:</strong> High-quality delivery of chosen modality (clear audio, solid design, or strong writing).
+                          </p>
+                        </div>
+
+                        <div className="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                          <h4 className="font-bold text-sm text-purple-400 mb-2">Exceeds Standard (Exceptional Depth)</h4>
+                          <p className="text-xs text-slate-300 leading-relaxed">
+                            • Student incorporates relevant, verified primary sources.<br />
+                            • Exceptional creativity or design execution.<br />
+                            • Connects historical patterns directly to modern global dynamics.
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div className="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                        <h4 className="font-bold text-sm text-slate-200 mb-2">Implementation Tips for Teachers</h4>
+                        <ul className="text-xs text-slate-400 space-y-2 list-disc pl-5">
+                          <li>Allow students to choose exactly <strong>one</strong> high-interest project from the grid to complete as their unit finale.</li>
+                          <li>Encourage peer feedback cycles using the standard criteria above mid-way through their production.</li>
+                          <li>Allow submission of Wildcards within the first 3 days of launching the project to stimulate ultimate ownership.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div>
+                    {/* 3x3 Grid Wrapper */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {getCardsWithWildcards().map((card, i) => (
+                        <button
+                          key={card.id || i}
+                          onClick={() => setSelectedCard(card)}
+                          className={`text-left p-5 rounded-xl border transition-all flex flex-col justify-between gap-4 h-64 relative group ${
+                            card.id.includes('wildcard') || card.id.includes('ai')
+                              ? "bg-slate-950 border-dashed border-indigo-500/50 hover:border-indigo-400"
+                              : "bg-slate-950 hover:bg-slate-900 border-slate-800 hover:border-slate-700"
+                          } ${selectedCard?.id === card.id ? "ring-2 ring-teal-500 border-transparent" : ""}`}
+                        >
+                          <div>
+                            <div className="flex items-center justify-between gap-2 mb-2">
+                              <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+                                card.id.includes('wildcard') || card.id.includes('ai')
+                                  ? "bg-indigo-500/10 text-indigo-300"
+                                  : "bg-teal-500/10 text-teal-300"
+                              }`}>
+                                {card.type}
+                              </span>
+                              <span className="font-mono text-[9px] text-slate-500">{card.standard}</span>
+                            </div>
+
+                            <h4 className="font-bold text-sm text-slate-100 group-hover:text-teal-300 transition-colors line-clamp-1">
+                              {card.title}
+                            </h4>
+
+                            <p className="text-xs text-slate-400 mt-2 line-clamp-4 leading-relaxed">
+                              {card.scenario}
+                            </p>
+                          </div>
+
+                          <div className="border-t border-slate-900 pt-3 flex items-center justify-between w-full mt-auto">
+                            <span className="text-[10px] text-slate-500 font-mono">Modality: {card.modality.split(' ')[0]}...</span>
+                            <span className="text-[10px] text-teal-400 group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                              Inspect <ChevronRight className="h-3 w-3" />
+                            </span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* If filtered list is empty */}
+                    {getFilteredCards().length === 0 && (
+                      <div className="bg-slate-950 p-12 text-center rounded-xl border border-slate-800">
+                        <HelpCircle className="h-10 w-10 text-slate-600 mx-auto mb-3" />
+                        <p className="text-slate-400 text-sm">No tasks matched your filter query. Resetting search bar...</p>
+                        <button
+                          onClick={() => setSearchQuery("")}
+                          className="mt-3 px-4 py-1.5 bg-slate-850 hover:bg-slate-800 text-xs rounded-lg text-slate-300 border border-slate-800"
+                        >
+                          Clear Filter
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Active Card Workspace Detail / Inspect Panel */}
+                {selectedCard && (
+                  <div className="bg-gradient-to-br from-slate-950 to-slate-900 rounded-xl p-6 border border-teal-500/30 shadow-2xl relative overflow-hidden">
+                    <div className="absolute top-0 right-0 p-3">
+                      <button
+                        onClick={() => setSelectedCard(null)}
+                        className="text-slate-400 hover:text-white text-xs bg-slate-850 hover:bg-slate-800 px-2.5 py-1 rounded"
+                      >
+                        Close Inspection
+                      </button>
+                    </div>
+
+                    <div className="max-w-2xl">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="bg-teal-500/10 text-teal-400 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                          {selectedCard.type}
+                        </span>
+                        <span className="font-mono text-xs text-slate-400">Standard Match: {selectedCard.standard}</span>
+                        <span className="text-xs text-slate-500">• Difficulty: {selectedCard.difficulty}</span>
+                      </div>
+
+                      <h3 className="text-2xl font-black text-white mb-4 tracking-tight">{selectedCard.title}</h3>
+
+                      <div className="space-y-4">
+                        <div>
+                          <h5 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Real-World Scenario</h5>
+                          <p className="text-sm text-slate-300 mt-1 leading-relaxed bg-slate-950/50 p-3 rounded-lg border border-slate-900">
+                            {selectedCard.scenario}
+                          </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="bg-slate-950/30 p-3 rounded-lg border border-slate-850">
+                            <h5 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Suggested Modality</h5>
+                            <p className="text-sm text-teal-300 font-semibold mt-1">{selectedCard.modality}</p>
+                          </div>
+                          <div className="bg-slate-950/30 p-3 rounded-lg border border-slate-850">
+                            <h5 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Required Deliverable</h5>
+                            <p className="text-sm text-indigo-300 font-semibold mt-1">{selectedCard.deliverable}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Card Action Panel */}
+                      <div className="flex flex-wrap gap-3 mt-6 pt-5 border-t border-slate-800/80">
+                        <button
+                          onClick={() => handleCopyToClipboard(`Task: ${selectedCard.title}\nScenario: ${selectedCard.scenario}\nModality: ${selectedCard.modality}\nDeliverable: ${selectedCard.deliverable}\nStandard: ${selectedCard.standard}`)}
+                          className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-4 py-2 rounded-lg border border-slate-700 transition-colors"
+                        >
+                          <Copy className="h-3.5 w-3.5" /> Copy Task Text
+                        </button>
+                        <button
+                          onClick={() => { window.print(); }}
+                          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-all"
+                        >
+                          <Share2 className="h-3.5 w-3.5" /> Share / Print Project Card
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Wildcard Proposal Portal */}
+                <div className="bg-slate-950 border border-slate-800 rounded-xl p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Sparkles className="h-5 w-5 text-indigo-400" />
+                    <h3 className="font-bold text-base text-white">Student Wildcard Submission</h3>
+                  </div>
+                  <p className="text-xs text-slate-400 mb-5 leading-relaxed">
+                    Empower your students to pitch their own creative projects! Filling out the form below replaces the standard Wildcard card in the active grid with your custom, approved strategy.
+                  </p>
+
+                  {wildcardSuccess && (
+                    <div className="bg-emerald-950/30 border border-emerald-500/30 text-emerald-300 text-xs p-3 rounded-lg mb-4 flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4" /> Wildcard proposal has been accepted and injected into the current choice grid!
+                    </div>
+                  )}
+
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-slate-400 mb-1">Project Title</label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="e.g. Hamilton: The Alternate Historical Critique"
+                          value={customProposal.title}
+                          onChange={(e) => setCustomProposal({...customProposal, title: e.target.value})}
+                          className="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-indigo-500"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-slate-400 mb-1">Standard Focus</label>
+                        <input
+                          type="text"
+                          placeholder={currentDomain.standards}
+                          value={customProposal.standard || currentDomain.standards}
+                          onChange={(e) => setCustomProposal({...customProposal, standard: e.target.value})}
+                          className="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-indigo-500"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-slate-400 mb-1">Your Real-World Role / Scenario</label>
+                        <textarea
+                          rows="2"
+                          placeholder="e.g. I am taking on the role of a political strategist advising..."
+                          value={customProposal.scenario}
+                          onChange={(e) => setCustomProposal({...customProposal, scenario: e.target.value})}
+                          className="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-indigo-500 resize-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-slate-400 mb-1">Required Deliverable</label>
+                        <textarea
+                          rows="2"
+                          required
+                          placeholder="e.g. A digital flowchart showcasing legislative connections or..."
+                          value={customProposal.deliverable}
+                          onChange={(e) => setCustomProposal({...customProposal, deliverable: e.target.value})}
+                          className="w-full bg-slate-900 border border-slate-800 rounded-lg px-3.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-indigo-500 resize-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex justify-end pt-2">
+                      <button
+                        type="button"
+                        onClick={handleWildcardSubmit}
+                        className="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs px-5 py-2.5 rounded-lg transition-all shadow-md shadow-indigo-600/10"
+                      >
+                        Accept Wildcard Project
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </main>
+
+          {/* Printable Grid Sheet (visible only when printing) */}
+          <div className="hidden print:block bg-white text-slate-950 p-8 min-h-screen">
+            <div className="border-b border-slate-300 pb-4 mb-6">
+              <h1 className="text-2xl font-extrabold tracking-tight">USH Choice Board Studio</h1>
+              <p className="text-xs text-slate-500">Georgia Standards of Excellence (GSE) Assessment Tool</p>
+              <div className="text-sm font-bold text-slate-950 mt-2">
+                Selected Unit: {currentDomain.title} ({currentDomain.standards})
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3">
+              {getCardsWithWildcards().map((card, i) => (
+                <div key={card.id || i} className="border border-slate-400 p-4 rounded-lg flex flex-col justify-between h-[240px]">
+                  <div>
+                    <div className="text-[10px] font-bold uppercase text-slate-500 flex justify-between">
+                      <span>{card.type}</span>
+                      <span>{card.standard}</span>
+                    </div>
+                    <h4 className="font-extrabold text-sm mt-1 border-b border-slate-200 pb-1">{card.title}</h4>
+                    <p className="text-xs text-slate-700 mt-2 leading-tight">{card.scenario}</p>
+                  </div>
+                  <div className="border-t border-slate-200 pt-2 text-[10px] text-slate-950 font-semibold">
+                    <div>Deliverable: {card.deliverable}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 border-t border-slate-300 pt-4">
+              <h3 className="text-sm font-bold">Directions for Students:</h3>
+              <p className="text-xs text-slate-600 mt-1">
+                Choose exactly one (1) authentic learning task from the choice board above to complete as your unit assessment. Your chosen deliverable will be evaluated using the official course rubrics focusing on historical accuracy, alignment to standard, and production value.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
